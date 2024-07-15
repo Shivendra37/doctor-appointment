@@ -296,6 +296,58 @@ const getPagination = async (req, res) => {
   // Send the paginated products and total pages as the API response
   res.json({ users: paginatedUsers, totalPages });
 };
+
+const updateUserProfile = async (req, res) => {
+  try {
+    const userId = req.params.id;
+    const user = await Users.findById(userId);
+    if (!user) {
+      return res.status(404).json({
+        success: false,
+        message: 'User not found.',
+      });
+    }
+
+    let avatarUrl = user.avatar;
+    if (req.files && req.files.avatar) {
+      const { avatar } = req.files;
+      const uploadedAvatar = await cloudinary.uploader.upload(avatar.path, { folder: 'avatars' });
+      if (!uploadedAvatar || !uploadedAvatar.secure_url) {
+        return res.status(500).json({
+          success: false,
+          message: 'Failed to upload avatar to Cloudinary',
+        });
+      }
+      avatarUrl = uploadedAvatar.secure_url;
+    } else if (typeof req.body.avatar === 'string') {
+      avatarUrl = req.body.avatar;
+    }
+
+    user.UserName = req.body.UserName || user.UserName;
+    user.phoneNumber = req.body.phoneNumber || user.phoneNumber;
+    user.avatar = avatarUrl || user.avatar;
+
+    await user.save();
+
+    res.status(200).json({
+      success: true,
+      message: 'User profile updated successfully.',
+      user: {
+        UserName: user.UserName,
+        phoneNumber: user.phoneNumber,
+        avatar: user.avatar,
+        email: user.email,
+      },
+    });
+  } catch (error) {
+    console.error('Error updating user profile:', error);
+    res.status(500).json({
+      success: false,
+      message: 'Server Error',
+    });
+  }
+};
+
 module.exports = {
   createUser,
   loginUser,
@@ -305,4 +357,5 @@ module.exports = {
   getSingleUser,
   deleteUser,
   getPagination,
+  updateUserProfile,
 };

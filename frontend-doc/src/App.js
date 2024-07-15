@@ -25,7 +25,7 @@ import Details from "./pages/User/Details";
 import EmergencyContacts from "./pages/User/EmergencyContacts";
 import HealthPackage from "./pages/User/HealthPackage";
 import Homepage from "./pages/User/Homepage";
-import Profile from "./pages/User/Profile";
+import UserProfile from "./pages/User/UserProfile";
 import Success from "./pages/User/Success";
 import UserDashboard from "./pages/User/UserDashboard";
 
@@ -66,7 +66,7 @@ function App() {
         <Route path="/childcare" element={<Childcare />} />
         <Route path="/userdashboard" element={<UserDashboard />} />
         <Route path="/childcare/:id" element={<ChildcareDetail />} />
-        <Route path="/profile" element={<Profile />} />
+        <Route path="/profile" element={<UserProfile />} />
         <Route path="/healthpackages" element={<HealthPackage />} />
         <Route path="/history" element={<AppointmentHistory />} />
       </Routes>
@@ -75,27 +75,3 @@ function App() {
 }
 
 export default App;
-
-// <Route element={<AdminRoutes />}>
-//           <Route path="/admin/admindash" element={<AdminDash />} />
-//           <Route path="/admin/requestdash" element={<RequestDash />} />
-//           <Route path="/admin/edit/:id" element={<AdminEditCategory />} />
-
-//           {/* <Route path='/admin/menudash/:categoryId' element={<MenuDash/>}/> */}
-
-//           {/* <Route path='/admin/menuedit/:id' element={<AdminEditMenu/>}/> */}
-
-//           <Route path="/admin/itemdash/:categoryId" element={<ItemDash />} />
-
-//           <Route path="/admin/itemedit/:id" element={<AdminEditItem />} />
-
-//           <Route path="/admin/usertable" element={<UserTable />} />
-//           <Route path="/admin/bookingdash" element={<BookingDash />} />
-//         </Route>
-//         <Route path="/forget-password" element={<ForgetPassword />} />
-//         <Route path="/password/reset/:token" element={<ResetPassword />} />
-//         <Route path="/verify" component={<VerificationMessage />} />
-//       </Routes>
-//     </Router>
-//   );
-// }
