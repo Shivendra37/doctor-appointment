@@ -77,3 +77,6 @@ export const doctorAppointmentApi = () =>
 
 export const doctorSingleAppointmentApi = (id) => 
   Api.get(`/api/appointment/doctor/appointment/${id}`,)
+
+export const updateUserProfileApi = (id, userData) =>
+  Api.put(`/api/user/profile/${id}`, userData, config);

@@ -38,10 +38,10 @@ const Childcare = () => {
               src="../assets/images/childcare2.jpg"
               className="card-img-top"
               alt="Childcare Service 2"
-              style={{ height: "500px", objectFit: "cover" }}
+              style={{ height: "477px", objectFit: "cover" }}
             />
             <div className="card-body">
-              <h5 className="card-title">Service 2</h5>
+              <h5 className="card-title">Child growth and development monitoring</h5>
               <button
                 className="btn btn-primary"
                 onClick={() => handleViewDetails(2)}

@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import React, { useEffect, useState } from "react";
 import {
     doctorAppointmentApi,
@@ -94,7 +95,7 @@ const AppointmentHistory = () => {
                 <thead className="table-dark">
                   <tr>
                     <th>SN</th>
-                    <th>Doctor's Name</th>
+                    {/* <th>Doctor's Name</th> */}
                     <th>Appointment Date</th>
                     <th>Appointment Time</th>
                     <th>Message</th>
@@ -105,9 +106,8 @@ const AppointmentHistory = () => {
                   {appointments.map((appointment, index) => (
                     <tr key={appointment._id}>
                       <td>{index + 1}</td>
-                      {/* Assuming user and doctor IDs are present in the appointment */}
 
-                      <td>{doctorName[appointment.doctorId] || ""}</td>
+                      {/* <td>{doctorName[appointment.doctorId] || ""}</td> */}
 
                       <td>{appointment.date}</td>
                       <td>{appointment.time}</td>

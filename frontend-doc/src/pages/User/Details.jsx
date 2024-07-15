@@ -275,7 +275,7 @@ const Details = () => {
                                 <div className="col">
                                   <button
                                     type="button"
-                                    className="btn btn-secondary"
+                                    className="btn btn-danger"
                                     data-bs-dismiss="modal"
                                   >
                                     Cancel
@@ -286,7 +286,7 @@ const Details = () => {
                                   <div className="pt-1 mb-3 d-flex text-center justify-content-center">
                                     <button
                                       onClick={handleSubmit}
-                                      className="btn w-100 mb-2 btn btn-dark"
+                                      className="btn w-100 mb-2 btn btn-primary"
                                       type="button"
                                       disabled={!isVerified}
                                     >
