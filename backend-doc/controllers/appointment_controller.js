@@ -4,6 +4,8 @@ const Appointments = require("../model/appointment_model");
 const bookAppointment = async (req, res) => {
   const { date, time, userId, doctorId, message } = req.body;
 
+  console.log("REqured body: ", req.body);
+
   if (!date || !time) {
     return res.json({
       success: false,

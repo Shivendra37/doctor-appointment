@@ -7,6 +7,9 @@ const morgan = require("morgan")
 const cloudinary = require("cloudinary");
 const acceptMultimedia = require("connect-multiparty");
 const colors = require('colors');
+const bodyParser = require('body-parser');
+
+
 
 // Making express app
 const app = express();
@@ -37,8 +40,11 @@ app.use(cors(corsOptions));
 connectDB();
 
 // Accepting json data
-app.use(express.json());
-app.use(express.urlencoded({extended:true}))
+// app.use(express.json());
+// app.use(express.urlencoded({extended:true}))
+
+app.use(bodyParser.json({ limit: '50mb' }));
+app.use(bodyParser.urlencoded({ limit: '50mb', extended: true }));
 
 // creating test route
 app.get("/test", (req, res) => {
@@ -51,6 +57,10 @@ app.use("/api/user", require("./routes/user_routes"));
 app.use("/api/doctor", require("./routes/admin_routes"));
 // appointments
 app.use("/api/appointment", require("./routes/appointment_routes"));
+
+
+app.use("/api/products", require("./routes/product_routes"));
+
 
 // defining port
 const PORT = process.env.PORT;
