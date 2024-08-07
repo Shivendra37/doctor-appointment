@@ -28,6 +28,8 @@ import Homepage from "./pages/User/Homepage";
 import UserProfile from "./pages/User/UserProfile";
 import Success from "./pages/User/Success";
 import UserDashboard from "./pages/User/UserDashboard";
+import ProductsPage from "./pages/admin/ProductsPage";
+import Checkout from "./pages/User/Checkout";
 
 function App() {
   const user = JSON.parse(localStorage.getItem("user"));
@@ -54,6 +56,7 @@ function App() {
         <Route path="/admin/view/:id" element={<AdminView />} />
         <Route path="/admin/appointments" element={<Appoinments />} />
         <Route path="/admin/users" element={<Users />} />
+        <Route path="/admin/products" element={<ProductsPage />} />
         <Route path="/sidebar" element={<Sidebar />} />
         <Route element={<UserRoutes />}>
           <Route path="/homepage" element={<Homepage />} />
@@ -68,6 +71,7 @@ function App() {
         <Route path="/childcare/:id" element={<ChildcareDetail />} />
         <Route path="/profile" element={<UserProfile />} />
         <Route path="/healthpackages" element={<HealthPackage />} />
+        <Route path="/checkout" element={<Checkout />} />
         <Route path="/history" element={<AppointmentHistory />} />
       </Routes>
     </Router>
