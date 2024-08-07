@@ -19,9 +19,9 @@ const Navbar = () => {
   const handleRegister = () => {
     navigate("/register");
   };
-  const handleAppointmentHistory =()=>{
-    navigate("/history")
-  }
+  const handleAppointmentHistory = () => {
+    navigate("/history");
+  };
 
   const handleNavigation = (path) => {
     if (user) {
@@ -138,21 +138,20 @@ const Navbar = () => {
                   </ul>
                 </div>
               ) : (
-                <>
+                <div className="d-flex gap-2"> {/* Added a wrapper div with gap-2 class */}
                   <button
                     className="btn btn-outline-primary"
                     onClick={handleRegister}
                   >
                     Sign Up
                   </button>
-
                   <button
                     className="btn btn-outline-danger"
                     onClick={handleLogin}
                   >
                     Login
                   </button>
-                </>
+                </div>
               )}
             </form>
           </nav>

@@ -70,13 +70,23 @@ export const deleteAppointmentApi = (id) =>
 export const getPaginationAppointmentApi = (currentPage) =>
   Api.get(`/api/appointment/getPagination?page=${currentPage}`);
 
-
 // doctor api routes
 export const doctorAppointmentApi = () =>
   Api.get(`/api/appointment/doctor/getappointment`);
 
-export const doctorSingleAppointmentApi = (id) => 
-  Api.get(`/api/appointment/doctor/appointment/${id}`,)
+export const doctorSingleAppointmentApi = (id) =>
+  Api.get(`/api/appointment/doctor/appointment/${id}`);
 
 export const updateUserProfileApi = (id, userData) =>
   Api.put(`/api/user/profile/${id}`, userData, config);
+
+// products route
+export const createProductApi = (formData, user) =>
+  Api.post("/api/products/create", formData, config);
+
+export const deleteProductApi = (id) =>
+  Api.delete(`/api/products/${id}`, config);
+
+export const getProductsApi = (id) => Api.get(`/api/products/${id}`, config);
+
+export const getAllProductsApi = () => Api.get(`/api/products`, config);
