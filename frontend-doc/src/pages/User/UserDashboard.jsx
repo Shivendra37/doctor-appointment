@@ -96,8 +96,7 @@ const UserDashboard = () => {
                         Appointments
                       </h3>
                       <p className="card-text">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                        Eaque, quis.
+                       Book Appointments with few clicks now!.
                       </p>
                       <button
                         className="btn btn-dark"

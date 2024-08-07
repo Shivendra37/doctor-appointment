@@ -3,9 +3,12 @@ import { toast } from 'react-toastify';
 import { updateUserProfileApi } from '../../apis/Api';
 import dummyPhoto from './image.png';
 import '../../profilepage.css';
+import {useNavigate } from "react-router-dom";
+
 
 const Profile = () => {
   const [user, setUser] = useState(JSON.parse(localStorage.getItem('user')));
+  const navigate = useNavigate();
   const [formData, setFormData] = useState({
     UserName: user.UserName,
     phoneNumber: user.phoneNumber,
@@ -65,6 +68,13 @@ const Profile = () => {
 
   return (
     <div className="container profile-container">
+          <button
+        className="btn btn-dark"
+        style={{ position: "absolute", top: "20px", left: "20px" }}
+        onClick={() => navigate("/")}
+      >
+        Back
+      </button>
       <h1>Profile</h1>
       <form>
         <div className="form-group">
