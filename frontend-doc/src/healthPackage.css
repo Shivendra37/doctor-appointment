@@ -1,0 +1,25 @@
+.card {
+    height: 100%;
+  }
+  
+  .card-img-top {
+    height: 300px;
+    object-fit: cover;
+  }
+  
+  .card-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  
+  .card-title, .card-text {
+    flex-grow: 1;
+  }
+  
+  .card-footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
