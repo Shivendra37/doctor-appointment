@@ -1,9 +1,9 @@
-// src/pages/User/ChildcareDetail.js
 import React from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 
 const ChildcareDetail = () => {
   const { id } = useParams();
+  const navigate = useNavigate();
 
   const services = {
     1: {
@@ -31,6 +31,13 @@ const ChildcareDetail = () => {
 
   return (
     <div className="container">
+      <button
+        className="btn btn-dark"
+        style={{ position: "absolute", top: "20px", left: "20px" }}
+        onClick={() => navigate("/childcare")}
+      >
+        Back
+      </button>
       <h1 style={{ paddingTop: "100px" }}>{service.title}</h1>
       <div className="row">
         <div className="col-md-6">
@@ -42,10 +49,9 @@ const ChildcareDetail = () => {
           />
         </div>
         <div className="col-md-6">
-        <div className="d-flex align-items-center h-100">
-        <p>{service.description}</p>
-        </div>
-       
+          <div className="d-flex align-items-center h-100">
+            <p>{service.description}</p>
+          </div>
         </div>
       </div>
     </div>

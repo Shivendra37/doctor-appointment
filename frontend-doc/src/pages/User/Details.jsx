@@ -11,11 +11,11 @@ const Details = () => {
   const { id } = useParams();
   const navigate = useNavigate();
 
-  const [isScanned, setIsScanned] = useState(true);
+  // const [isScanned, setIsScanned] = useState(true);
 
-  const simulateScan = () => {
-    setIsScanned(true);
-  };
+  // const simulateScan = () => {
+  //   setIsScanned(true);
+  // };
 
   const [userData, setUserData] = useState();
   const getUserDataFromLocalStorage = () => {
@@ -84,6 +84,8 @@ const Details = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
+    console.log(data);
 
     bookappointmentApi(data)
       .then((res) => {
@@ -253,17 +255,17 @@ const Details = () => {
 
                           <div className="text-center my-4">
                             <div className="qr-code-container">
-                              <img
+                              {/* <img
                                 src="/assets/images/esewa.jpg"
                                 alt="QR Code"
                                 onClick={simulateScan}
-                              />
+                              /> */}
                             </div>
-                            <p>Scan to pay</p>
+                            {/* <p>Scan to pay</p> */}
                             <button
                               className="btn btn-dark"
                               onClick={verifyPayment}
-                              disabled={!isScanned}
+                              // disabled={!isScanned}
                             >
                               Verify Payment
                             </button>
