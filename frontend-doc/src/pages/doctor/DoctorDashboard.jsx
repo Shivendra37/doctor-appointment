@@ -57,7 +57,7 @@ const DoctorDashboard = () => {
           <div className="col-md-12 col-lg-12">
             <div className="row">
               <div className="col">
-                <h3 style={{ marginTop: 20 }}>Appointments</h3>
+                <h3 style={{ marginTop: 20 }}>Welcome Doctor these are your Appointments</h3>
                 <div className="d-flex justify-content-center">
                   {/* <div
                     className="input-group mb-3 mx-auto"
