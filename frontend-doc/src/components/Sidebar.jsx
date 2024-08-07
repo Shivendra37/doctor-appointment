@@ -30,12 +30,12 @@ const Sidebar = () => {
           className="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-dark text-decoration-none"
         >
           <img
-              src="../assets/images/logo.png"
-              alt=""
-              width="150"
-              height="100"
-              className="img-fluid"
-            />
+            src="../assets/images/logo.png"
+            alt=""
+            width="150"
+            height="100"
+            className="img-fluid"
+          />
         </a>
 
         <ul
@@ -61,8 +61,17 @@ const Sidebar = () => {
             </a>
           </li>
           <li>
-            <a href="/admin/users" className="nav-link link-dark">
+            <a
+              href="/admin/users"
+              className="nav-link link-dark"
+              style={{ marginBottom: "20px" }}
+            >
               USER
+            </a>
+          </li>
+          <li>
+            <a href="/admin/products" className="nav-link link-dark">
+              PACKAGES
             </a>
           </li>
         </ul>
